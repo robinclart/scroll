@@ -1,0 +1,21 @@
+<div class="Page">
+  <% if page.present? %>
+    <% if page.title.present? %>
+      <% content_for :title, page.title %>
+    <% end %>
+
+    <% if page.children.empty? %>
+      <div class="container">
+        <%= link_to "Add first row", scroll.new_row_path(page_id: page.id, position: 0), class: "AddScrollRowLink", data: { open_modal: ".ModalBox" } %>
+      </div>
+    <% else %>
+      <% page.children.each_with_index do |row,position| %>
+        <%= render row, position: position %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<% if can_edit_scroll? %>
+  <%= render template: "scroll/pages/edit", locals: { page: page } %>
+<% end %>

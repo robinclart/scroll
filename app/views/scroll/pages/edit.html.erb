@@ -1,0 +1,45 @@
+<div id="scroll">
+  <div id="scroll_admin" style="display: none;">
+    <div class="container">
+      <% if page.nil? %>
+        <%= link_to "Setup page at path #{request.path}", scroll.pages_path(path: request.path), class: "ReverseActionButton", method: :post %>
+      <% else %>
+
+        <%= form_for page do |f| %>
+          <div class="row">
+            <div class="col6">
+              <div>
+                <%= f.label :title %><br>
+                <%= f.text_field :title %>
+              </div>
+              <div>
+                <%= f.label :meta_description %><br>
+                <%= f.text_area :meta_description, rows: 6 %>
+              </div>
+            </div>
+            <div class="col6">
+              <div>
+                <%= f.label :path %><br>
+                <%= f.text_field :path %>
+              </div>
+              <div>
+                <%= f.label :meta_keywords %><br>
+                <%= f.text_area :meta_keywords, rows: 6 %>
+              </div>
+            </div>
+          </div>
+          <p>
+            <%= f.submit class: "ReverseActionButton" %>
+          </p>
+        <% end %>
+
+        <p>
+          <%= link_to "Preview", (request.path + "?preview"), class: "ReverseActionButton" %>
+          <%= link_to "Destroy page", scroll.page_path(page), class: "ReverseActionButton", method: :delete %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+
+  <%= link_to "&nbsp;".html_safe, "#", id: "show_scroll_admin" %>
+</div>

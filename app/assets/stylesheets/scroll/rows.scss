@@ -1,0 +1,32 @@
+$add-link-background-color: #e6edf2;
+$remove-link-background-color: #f2f2f2;
+
+.AddScrollRowLink {
+  @extend .BlockLink;
+
+  background: $add-link-background-color;
+  color: #1468a8;
+
+  &:hover {
+    background: darken($add-link-background-color, 5);
+  }
+
+  &:active {
+    background: $add-link-background-color;
+  }
+}
+
+.RemoveScrollRowLink {
+  @extend .BlockLink;
+
+  background: $remove-link-background-color;
+  color: #c41818;
+
+  &:hover {
+    background: darken($remove-link-background-color, 5);
+  }
+
+  &:active {
+    background: $remove-link-background-color;
+  }
+}

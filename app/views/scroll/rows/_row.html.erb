@@ -1,0 +1,24 @@
+<div class="outer-row">
+  <div class="container">
+
+    <% if can_edit_scroll? %>
+      <div class="BeforeActions">
+        <%= link_to "Add row before", scroll.new_row_path(page_id: row.page_id, position: position), class: "AddScrollRowLink", data: { open_modal: ".ModalBox" } %>
+      </div>
+    <% end %>
+
+    <div class="row" id="<%= dom_id row %>">
+      <% row.children.each_with_index do |column,position| %>
+        <%= render "scroll/columns/column", row: row, column: column, position: position %>
+      <% end %>
+    </div>
+
+    <% if can_edit_scroll? %>
+      <div class="AfterActions">
+        <%= link_to "Add row after", scroll.new_row_path(page_id: row.page_id, position: position + 1), class: "AddScrollRowLink", data: { open_modal: ".ModalBox" } %>
+        <%= link_to "Remove row above", scroll.row_path(row), class: "RemoveScrollRowLink", method: :delete %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

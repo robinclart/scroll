@@ -1,0 +1,83 @@
+$link-background-color: #e6edf2;
+
+.Component {
+  position: relative;
+}
+
+.Component img {
+  max-width: 100%;
+}
+
+.Component figure {
+  margin: 1em 0;
+}
+
+.Component figcaption {
+  font-size: .875em;
+  opacity: .66;
+  text-align: center;
+}
+
+.ComponentActions {
+  position: absolute;
+  line-height: 34px;
+  width: 100%;
+  margin-bottom: 1em;
+  background: #f2f2f2;
+  z-index: 9999;
+  padding: 10px 10px 5px 10px;
+  left: -10px;
+
+  box-shadow: inset 0 2px 6px rgba(0,0,0,.33);
+  border-radius: 8px;
+}
+
+.Component .BeforeActions {
+  @extend .ComponentActions;
+  top: -54px;
+}
+
+.Component .AfterActions {
+  @extend .ComponentActions;
+  position: relative;
+  margin-top: -1em;
+}
+
+.ActionButton {
+  display: inline-block;
+  padding: 4px 10px 5px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  line-height: 24px;
+  text-decoration: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  color: #878787;
+
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjMzIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4xMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  rgba(255,255,255,0.33) 0%, rgba(0,0,0,0.11) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.33)), color-stop(100%,rgba(0,0,0,0.11)));
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,0.33) 0%,rgba(0,0,0,0.11) 100%);
+  background: -o-linear-gradient(top,  rgba(255,255,255,0.33) 0%,rgba(0,0,0,0.11) 100%);
+  background: -ms-linear-gradient(top,  rgba(255,255,255,0.33) 0%,rgba(0,0,0,0.11) 100%);
+  background: linear-gradient(to bottom,  rgba(255,255,255,0.33) 0%,rgba(0,0,0,0.11) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#54ffffff', endColorstr='#1c000000',GradientType=0 );
+
+  &:hover {
+    color: #545454;
+    border-color: #1b7ee0;
+  }
+}
+
+.ReverseActionButton {
+  @extend .ActionButton;
+
+  color: #99afc4;
+  border-color: #99afc4;
+
+  &:hover {
+    color: white;
+    border-color: white;
+  }
+}
+

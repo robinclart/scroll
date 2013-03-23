@@ -1,0 +1,19 @@
+<%= component_form_for renderable do |f| %>
+  <div>
+    <%= f.text_area :content, rows: 1, class: "TextArea TitleField" %>
+  </div>
+
+  <div>
+    <%= f.label :style, "CSS class names" %><br>
+    <%= f.text_field :style %>
+  </div>
+
+  <div>
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+
+  <div>
+    <%= f.submit class: "Button" %>
+  </div>
+<% end %>

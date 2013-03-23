@@ -1,0 +1,16 @@
+<div class="Component" data-actions>
+
+  <div id="<%= dom_id(component) %>" data-reload="<%= url_for component %>">
+    <%= render component.renderable %>
+  </div>
+
+  <% if can_edit_scroll? %>
+    <div class="AfterActions"  style="display: none;">
+      <%= link_to "Add component after", scroll.new_component_path(column_id: component.column_id, position: position + 1), class: "ActionButton", data: { open_modal: ".ModalBox" } %>
+      <%= link_to "Add component before", scroll.new_component_path(column_id: component.column_id, position: position), class: "ActionButton", data: { open_modal: ".ModalBox" } %>
+      <%= link_to "Edit", scroll.edit_component_path(component), class: "ActionButton", data: { load: dom_id(component) } %>
+      <%= link_to "Remove", component, class: "ActionButton", method: :delete %>
+    </div>
+  <% end %>
+
+</div>

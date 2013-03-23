@@ -1,0 +1,7 @@
+<div>
+  <div class="ModalBox">
+    <% Scroll::Column.formats.each do |format_name, format| %>
+      <%= link_to "New row #{format_name}", scroll.rows_path(page_id: params[:page_id], position: params[:position], columns: format), method: :post %><br>
+    <% end %>
+  </div>
+</div>

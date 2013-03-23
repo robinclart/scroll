@@ -1,0 +1,7 @@
+<% if text_component.ever_been_updated? && text_component.content.present? %>
+  <div class="<%= text_component.style %>">
+    <%= markdown text_component.content %>
+  </div>
+<% else %>
+  <%= render template: "scroll/text_components/edit", locals: { renderable: text_component } %>
+<% end %>

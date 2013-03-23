@@ -1,0 +1,16 @@
+<% if figure_component.ever_been_updated? && figure_component.image.present? %>
+  <figure>
+    <% if figure_component.url.present? %>
+      <%= link_to image_tag(figure_component.image.url(:large)), figure_component.url %>
+    <% else %>
+      <%= image_tag figure_component.image.url(:large) %>
+    <% end %>
+    <% if figure_component.caption.present? %>
+      <figcaption>
+        <%= figure_component.caption %>
+      </figcaption>
+    <% end %>
+  </figure>
+<% else %>
+  <%= render template: "scroll/figure_components/edit", locals: { renderable: figure_component } %>
+<% end %>

@@ -1,0 +1,13 @@
+<div class="col<%= column.size %>" id="<%= dom_id column %>">
+  
+  <% if column.children.empty? && !can_edit_scroll? %>
+    &nbsp;
+  <% elsif column.children.empty? && can_edit_scroll? %>
+    <%= link_to "Add component", scroll.new_component_path(column_id: column.id, position: 0), class: "BlockLink", data: { open_modal: ".ModalBox" } %>
+  <% else %>
+    <% column.children.each_with_index do |component,position| %>
+      <%= render component, position: position %>
+    <% end %>
+  <% end %>
+
+</div>

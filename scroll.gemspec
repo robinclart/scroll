@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Scroll::VERSION
   s.authors     = ["Robin Clart"]
   s.email       = ["robin@clart.be"]
-  s.homepage    = "robinclart.com/scroll"
+  s.homepage    = "https://bitbucket.org/robinclart/scroll"
   s.summary     = "A CMS Engine"
   s.description = "A CMS Engine"
 

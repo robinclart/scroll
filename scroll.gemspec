@@ -7,11 +7,11 @@ require "scroll/version"
 Gem::Specification.new do |s|
   s.name        = "scroll"
   s.version     = Scroll::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Scroll."
-  s.description = "TODO: Description of Scroll."
+  s.authors     = ["Robin Clart"]
+  s.email       = ["robin@clart.be"]
+  s.homepage    = "robinclart.com/scroll"
+  s.summary     = "A CMS Engine"
+  s.description = "A CMS Engine"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]

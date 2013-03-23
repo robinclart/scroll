@@ -8,7 +8,7 @@ module Scroll
       has_attached_file :image, styles: ATTACHMENT_STYLES
     else
       has_attached_file :image,
-        styles: ATTACHMENT_STYLES
+        styles: ATTACHMENT_STYLES,
         storage: :fog,
         fog_credentials: {
           provider: "AWS",

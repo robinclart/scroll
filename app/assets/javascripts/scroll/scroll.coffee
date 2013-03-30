@@ -1,8 +1,10 @@
 #= require scroll/modal
 #= require scroll/load
 #= require scroll/reload
-#= require scroll/edit_component
-#= require scroll/actions
+#= require scroll/remove
+#= require scroll/form
+#= require scroll/commands
+#= require scroll/selectable
 
 $(document).ready ->
 

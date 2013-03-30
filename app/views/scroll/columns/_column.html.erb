@@ -1,9 +1,9 @@
-<div class="col<%= column.size %>" id="<%= dom_id column %>">
-  
+<div class="col<%= column.size %>" id="<%= dom_id(column) %>" data-selectable="Selected" data-commands="#<%= dom_id(column) %>_commands">
+
   <% if column.children.empty? && !can_edit_scroll? %>
     &nbsp;
   <% elsif column.children.empty? && can_edit_scroll? %>
-    <%= link_to "Add component", scroll.new_component_path(column_id: column.id, position: 0), class: "BlockLink", data: { open_modal: ".ModalBox" } %>
+    empty
   <% else %>
     <% column.children.each_with_index do |component,position| %>
       <%= render component, position: position %>
@@ -11,3 +11,9 @@
   <% end %>
 
 </div>
+
+<% if can_edit_scroll? %>
+  <div class="Commands" id="<%= dom_id(column) %>_commands" style="display:none">
+    <%= link_to "Add a component", new_component_path(column_id: column.id, position: column.children.count), class: "CommandButton", data: { append: "#" + dom_id(column) } %>
+  </div>
+<% end %>

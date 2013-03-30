@@ -1,32 +1,88 @@
-$add-link-background-color: #e6edf2;
-$remove-link-background-color: #f2f2f2;
+.NewRow {
+  text-align: center;
+}
 
-.AddScrollRowLink {
-  @extend .BlockLink;
-
-  background: $add-link-background-color;
-  color: #1468a8;
+.RowIconButton {
+  display: inline-block;
+  width: 80px;
+  padding: 10px 0;
+  margin: 0 10px;
 
   &:hover {
-    background: darken($add-link-background-color, 5);
-  }
-
-  &:active {
-    background: $add-link-background-color;
+    background: #f2f2f2;
   }
 }
 
-.RemoveScrollRowLink {
-  @extend .BlockLink;
-
-  background: $remove-link-background-color;
-  color: #c41818;
-
-  &:hover {
-    background: darken($remove-link-background-color, 5);
-  }
-
-  &:active {
-    background: $remove-link-background-color;
-  }
+.RowIcon {
+  display: block;
+  background: url("/assets/scroll/columns.png");
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  overflow: hidden;
 }
+
+.FullWidthRow {
+  @extend .RowIconButton;
+}
+
+.FullWidthRow i {
+  @extend .RowIcon;
+  background-position: top center;
+}
+
+.TwoColumnsRow {
+  @extend .RowIconButton;
+}
+
+.TwoColumnsRow i {
+  @extend .RowIcon;
+  background-position: center left;
+}
+
+.ThreeColumnsRow {
+  @extend .RowIconButton;
+}
+
+.ThreeColumnsRow i {
+  @extend .RowIcon;
+  background-position: center center;
+}
+
+.FourColumnsRow {
+  @extend .RowIconButton;
+}
+
+.FourColumnsRow i {
+  @extend .RowIcon;
+  background-position: center right;
+}
+
+.CenteredColumnRow {
+  @extend .RowIconButton;
+}
+
+.CenteredColumnRow i {
+  @extend .RowIcon;
+  background-position: bottom center;
+}
+
+.LargeLeftRow {
+  @extend .RowIconButton;
+}
+
+.LargeLeftRow i {
+  @extend .RowIcon;
+  background-position: top right;
+}
+
+.LargeRightRow {
+  @extend .RowIconButton;
+}
+
+.LargeRightRow i {
+  @extend .RowIcon;
+  background-position: top left;
+}
+
+

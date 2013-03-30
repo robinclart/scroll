@@ -1,7 +1,7 @@
-<div>
-  <div class="ModalBox">
-    <% Scroll::Component.types.each do |type_name| %>
-      <%= link_to "New component #{type_name}", scroll.components_path(column_id: params[:column_id], position: params[:position], type: type_name), method: :post %><br>
-    <% end %>
-  </div>
+<% column_id ||= params[:column_id] %>
+<% position ||= params[:position] %>
+<div class="NewComponent">
+  <% Scroll::Component.types.each do |type_name| %>
+    <%= link_to "New component #{type_name}", scroll.components_path(column_id: column_id, position: position, type: type_name), method: :post %>
+  <% end %>
 </div>

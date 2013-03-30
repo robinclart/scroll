@@ -18,5 +18,9 @@ module Scroll
         },
         fog_directory: ENV["S3_BUCKET"]
     end
+
+    def presentable?
+      image.present?
+    end
   end
 end

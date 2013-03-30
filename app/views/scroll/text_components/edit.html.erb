@@ -1,16 +1,23 @@
-<%= component_form_for renderable do |f| %>
+<div id="<%= dom_id(component) %>"
+     class="TextComponent <%= renderable.style %>"
+     data-reload="<%= url_for component %>">
 
-  <div>
-    <%= f.text_area :content, class: "TextArea" %>
-  </div>
+  <%= component_form_for renderable do |f| %>
+    <div class="Field <%= renderable.style %>">
+      <%= f.text_area :content, class: "ContentField", rows: 3, placeholder: "Type your text here...", data: { auto_save: true } %>
+    </div>
 
-  <div>
-    <%= f.label :style, "CSS class names" %><br>
-    <%= f.text_field :style %>
-  </div>
+    <div class="Options">
+      <% if Scroll.config.styles[:text_component].is_a?(Hash) %>
+        <div class="Field">
+          <%= f.select :style, Scroll.config.styles[:text_component] %>
+        </div>
+      <% end %>
 
-  <div>
-    <%= f.submit class: "Button" %>
-  </div>
+      <div>
+        <%= f.submit class: "Button" %>
+      </div>
+    </div>
+  <% end %>
 
-<% end %>
+</div>

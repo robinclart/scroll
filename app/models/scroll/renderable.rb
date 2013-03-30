@@ -6,6 +6,10 @@ module Scroll
       has_one :component, as: :renderable
     end
 
+    def presentable?
+      true
+    end
+
     def ever_been_updated?
       updated_at != created_at
     end

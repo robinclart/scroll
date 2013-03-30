@@ -5,12 +5,16 @@ module Scroll
     skip_before_filter :authentication_required, only: [:show]
 
     def show
-      page = Page.find_by_path(request.path)
+      pages = Page.where(path: request.path)
 
-      if page || can_edit_scroll?
-        render locals: { page: page }
+      if can_edit_scroll?
+        render locals: { page: pages.first }
       else
-        render file: Rails.root.join("public", "404.html"), layout: false
+        if page = pages.where(published: true).first
+          render locals: { page: page }
+        else
+          render file: Rails.root.join("public", "404.html"), layout: false
+        end
       end
     end
 
@@ -36,7 +40,7 @@ module Scroll
     end
 
     def page_params
-      params.require(:page).permit(:title, :path, :meta_description, :meta_keywords)
+      params.require(:page).permit(:title, :published, :path, :meta_description, :meta_keywords)
     end
   end
 end

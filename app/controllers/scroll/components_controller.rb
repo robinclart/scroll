@@ -7,12 +7,12 @@ module Scroll
     end
 
     def show
-      render locals: { renderable: component.renderable }, layout: !request.xhr?
+      render locals: { component: component, renderable: component.renderable }, layout: !request.xhr?
     end
 
     def edit
       template_directory = component.renderable.class.name.tableize
-      render "#{template_directory}/edit", locals: { renderable: component.renderable }, layout: !request.xhr?
+      render "#{template_directory}/edit", locals: { component: component, renderable: component.renderable }, layout: !request.xhr?
     end
 
     def create

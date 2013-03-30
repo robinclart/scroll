@@ -1,5 +1,6 @@
 $(document).on "reload.scroll", "[data-reload]", ->
   self = $(this)
   $.get self.data("reload"), (data) ->
-    self.html data
+    self.after $(data)
+    self.remove()
     $(document).trigger("page:change")

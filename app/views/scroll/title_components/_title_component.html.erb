@@ -1,11 +1,17 @@
-<% if title_component.ever_been_updated? && title_component.content.present? %>
-  <h1 class="<%= title_component.style %>">
-    <% if title_component.url.present? %>
-      <%= link_to title_component.content, title_component.url %>
-    <% else %>
+<h1 id="<%= dom_id(component) %>"
+    class="TitleComponent <%= component.renderable.style %>"
+    data-selectable="Selected"
+    data-commands="#<%= dom_id(component) %>_commands"
+    data-reload="<%= url_for component %>">
+
+  <% if title_component.url.present? %>
+    <%= link_to title_component.content, title_component.url %>
+  <% else %>
+    <% if title_component.content.present? %>
       <%= title_component.content %>
+    <% else %>
+      undefined title
     <% end %>
-  </h1>
-<% else %>
-  <%= render template: "scroll/title_components/edit", locals: { renderable: title_component } %>
-<% end %>
+  <% end %>
+
+</h1>

@@ -12,7 +12,7 @@ module Scroll
     end
 
     def component_form_for(renderable, options = {}, &block)
-      options.merge!(url: component_path(renderable.component), as: :component, remote: true)
+      options.merge!(url: component_path(renderable.component), as: :component, remote: true, html: { class: "Form" })
       form_for renderable, options, &block
     end
 

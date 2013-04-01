@@ -4,6 +4,12 @@ module Scroll
   class PagesController < ApplicationController
     skip_before_filter :authentication_required, only: [:show]
 
+    def index
+      pages = Page.order(:path).all.sort { |pa,pb| "#{pa.path}/" <=> "#{pb.path}/" }
+
+      render locals: { pages: pages }
+    end
+
     def show
       pages = Page.where(path: request.path)
 

@@ -1,0 +1,18 @@
+<% content_for :title, "Pages" %>
+
+<div class="container">
+  <h1>Sitemap</h1>
+  <ul class="PageTree">
+    <% pages.each do |page| %>
+      <li class="PageTreeLeaf" style="padding-left:<%= (page.path.split("/").count - 1) * 40 %>px">
+        <%= link_to page.path do %>
+          <%= request.host %><span><%= page.path %></span>
+        <% end %>
+        <% if page.title.present? %>
+          &mdash;
+          <%= page.title %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

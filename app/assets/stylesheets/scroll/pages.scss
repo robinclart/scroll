@@ -29,8 +29,25 @@
   text-decoration: none;
 }
 
-.PreviewScrollPageLink {}
+.PageTree {
+  list-style-type: none;
+}
 
-.DestroyScrollPageLink {}
+.PageTreeLeaf {
+  color: #a8a8a8;
+  padding: .25em 0;
 
-.CreateScrollPageLink {}
+  a {
+    color: #8c8c8c;
+    text-decoration: none;
+
+    span {
+      color: #545454;
+
+    }
+
+    &:hover, &:hover span {
+      color: #1899c4;
+    }
+  }
+}

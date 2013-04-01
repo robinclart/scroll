@@ -3,7 +3,7 @@
   <% if column.children.empty? && !can_edit_scroll? %>
     &nbsp;
   <% elsif column.children.empty? && can_edit_scroll? %>
-    empty
+    <p class="EmptyColumn">Click to edit</p>
   <% else %>
     <% column.children.each_with_index do |component,position| %>
       <%= render component, position: position %>

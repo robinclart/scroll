@@ -5,6 +5,7 @@
 #= require scroll/form
 #= require scroll/commands
 #= require scroll/selectable
+#= require scroll/close
 
 $(document).ready ->
 

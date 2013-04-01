@@ -2,7 +2,7 @@
   <div id="scroll_admin" style="display: none;">
     <div class="container">
       <% if page.nil? %>
-        <%= link_to "Setup page at path #{request.path}", scroll.pages_path(path: request.path), class: "ReverseActionButton", method: :post %>
+        <%= link_to "Setup page at path #{request.path}", scroll.pages_path(path: request.path), class: "Button", method: :post %>
       <% else %>
 
         <%= form_for page do |f| %>

@@ -1,0 +1,30 @@
+.NewComponent {
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.ComponentIcon {
+  display: inline-block;
+  background: url("/assets/scroll/components.png");
+  width: 60px;
+  height: 60px;
+  margin: 0 10px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.AddTitleComponentLink {
+  @extend .ComponentIcon;
+  background-position: center left;
+}
+
+.AddTextComponentLink {
+  @extend .ComponentIcon;
+  background-position: center center;
+}
+
+.AddFigureComponentLink {
+  @extend .ComponentIcon;
+  background-position: center right;
+}

@@ -10,6 +10,6 @@
     <%= link_to "Add component before", scroll.new_component_path(column_id: component.column_id, position: position), class: "CommandButton", data: { before: "#" + dom_id(component) } %>
     <%= link_to "Add component after", scroll.new_component_path(column_id: component.column_id, position: position + 1), class: "CommandButton", data: { after: "#" + dom_id(component) } %>
     <%= link_to "Edit", scroll.edit_component_path(component), class: "CommandButton", data: { load: "##{dom_id(component)}" } %>
-    <%= link_to "Remove", component, class: "CommandButton", method: :delete, remote: true, data: { remove: "##{dom_id(component)}" } %>
+    <%= link_to "Remove", scroll.component_path(component), class: "CommandButton", method: :delete, remote: true, data: { remove: "##{dom_id(component)}" } %>
   </div>
 <% end %>

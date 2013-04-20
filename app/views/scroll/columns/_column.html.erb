@@ -14,6 +14,6 @@
 
 <% if can_edit_scroll? %>
   <div class="Commands" id="<%= dom_id(column) %>_commands" style="display:none">
-    <%= link_to "Add a component", new_component_path(column_id: column.id, position: column.children.count), class: "CommandButton", data: { append: "#" + dom_id(column) } %>
+    <%= link_to "Add a component", scroll.new_component_path(column_id: column.id, position: column.children.count), class: "CommandButton", data: { append: "#" + dom_id(column) } %>
   </div>
 <% end %>

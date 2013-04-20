@@ -2,7 +2,7 @@
      class="TextComponent <%= text_component.style %>"
      data-selectable="Selected"
      data-commands="#<%= dom_id(component) %>_commands"
-     data-reload="<%= url_for component %>">
+     data-reload="<%= scroll.component_path(component) %>">
 
   <%= markdown text_component.content.presence || "no text" %>
 

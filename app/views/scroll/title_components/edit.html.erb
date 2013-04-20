@@ -1,6 +1,6 @@
 <div id="<%= dom_id(component) %>"
      class="TextComponent"
-     data-reload="<%= url_for component %>">
+     data-reload="<%= scroll.component_path(component) %>">
 
   <%= component_form_for renderable do |f| %>
     <div class="Field <%= renderable.style %>">

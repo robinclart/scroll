@@ -2,7 +2,7 @@
     class="TitleComponent <%= component.renderable.style %>"
     data-selectable="Selected"
     data-commands="#<%= dom_id(component) %>_commands"
-    data-reload="<%= url_for component %>">
+    data-reload="<%= scroll.component_path(component) %>">
 
   <% if title_component.url.present? %>
     <%= link_to title_component.content, title_component.url %>

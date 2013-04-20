@@ -5,7 +5,7 @@
         <%= link_to "Setup page at path #{request.path}", scroll.pages_path(path: request.path), class: "Button", method: :post %>
       <% else %>
 
-        <%= form_for page do |f| %>
+        <%= form_for page, url: scroll.page_path(page) do |f| %>
 
           <div class="Field">
             Path: <%= f.text_field :path, class: "TextField", placeholder: "Page Path" %>

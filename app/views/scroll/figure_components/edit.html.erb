@@ -19,6 +19,10 @@
         <%= f.text_field :url, class: "TextField", placeholder: "URL" %>
       </div>
 
+      <div class="Field">
+        <%= f.text_field :width, class: "TextField", placeholder: "Width" %>
+      </div>
+
       <% if Scroll.config.styles[:figure_component].is_a?(Hash) %>
         <div class="Field">
           <%= f.select :style, Scroll.config.styles[:figure_component] %>

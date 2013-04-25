@@ -1,6 +1,7 @@
 <figure id="<%= dom_id(component) %>"
         class="FigureComponent <%= component.renderable.style %>"
         data-selectable="Selected"
+        style="<%= "width: #{figure_component.width}px;" if figure_component.width.present? && !figure_component.width.zero? %>"
         data-commands="#<%= dom_id(component) %>_commands"
         data-reload="<%= scroll.component_path(component) %>">
 

@@ -20,6 +20,7 @@
 
       <div>
         <%= f.submit class: "Button" %>
+        or <%= link_to "cancel", scroll.component_path(component), data: { load: "##{dom_id(component)}" } %>
       </div>
     </div>
   <% end %>

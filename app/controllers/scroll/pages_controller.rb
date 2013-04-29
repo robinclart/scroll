@@ -24,6 +24,11 @@ module Scroll
       end
     end
 
+    def publish
+      page.update_attribute :published, true
+      redirect_to page.path
+    end
+
     def create
       page = Page.create(path: params[:path].to_s)
       redirect_to page.path

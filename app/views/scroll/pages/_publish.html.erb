@@ -1,0 +1,6 @@
+<% unless page.published? %>
+  <div id="publish_scroll_page">
+    This page has not been published yet.
+    <%= link_to "Publish it now!", scroll.publish_page_path(page), method: :put %>
+  </div>
+<% end %>

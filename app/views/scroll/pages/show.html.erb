@@ -22,5 +22,6 @@
 
 <% if can_edit_scroll? %>
   <%= render template: "scroll/pages/edit", locals: { page: page } %>
+  <%= render "scroll/pages/publish", page: page %>
   <div id="scroll_commands" style="display:none"></div>
 <% end %>
